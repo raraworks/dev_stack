@@ -16,7 +16,7 @@ php-pgsql \
 php-mysql \
 php-xdebug \
 #add www-data group to nginx user so that nginx has access to php-fpm pool
-&& usermod -aG www-data nginx
+&& usermod -aG www-data nginx \
 # Installing composer and its prerequisites globally
 && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php &&  php -r "unlink('composer-setup.php');" && mv composer.phar /usr/local/bin/composer \
 && composer global require hirak/prestissimo \
