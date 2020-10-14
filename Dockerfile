@@ -1,6 +1,6 @@
 FROM nginx:stable
 #General bringing up  to date and prerequisites
-RUN apt-get update && apt-get upgrade -y && apt-get install -y wget lsb-release && rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Riga /etc/localtime \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget lsb-release vim unzip && rm -f /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Riga /etc/localtime \
 #add up to date php PPA, and retrieve latest stable php with required extensions that are not bundled with it
 && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
 && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list \
@@ -24,7 +24,7 @@ php-xdebug \
 && apt-get install -y build-essential \
 && curl -sL https://deb.nodesource.com/setup_lts.x | bash - \
     && apt-get install -y nodejs
-
+COPY php.ini-development /etc/php/7.4/fpm/php.ini
 COPY startup_script.sh ./
 RUN chmod a+x startup_script.sh
 
