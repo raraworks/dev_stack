@@ -20,7 +20,6 @@ php-gd \
 && usermod -aG www-data nginx \
 # Installing composer and its prerequisites globally
 && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php &&  php -r "unlink('composer-setup.php');" && mv composer.phar /usr/local/bin/composer \
-&& composer global require hirak/prestissimo \
 # Installing node and npm and its prerequisites
 && apt-get install -y build-essential \
 && curl -sL https://deb.nodesource.com/setup_lts.x | bash - \
