@@ -23,7 +23,9 @@ php-gd \
 # Installing node and npm and its prerequisites
 && apt-get install -y build-essential \
 && curl -sL https://deb.nodesource.com/setup_lts.x | bash - \
-    && apt-get install -y nodejs
+    && apt-get install -y nodejs \
+# Installing git (required for some composer actions)
+&& apt-get install -y git
 COPY php.ini-development /etc/php/7.4/fpm/php.ini
 COPY startup_script.sh ./
 RUN chmod a+x startup_script.sh
