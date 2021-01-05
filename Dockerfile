@@ -26,7 +26,7 @@ php8.0-gd \
     && apt-get install -y nodejs \
 # Installing git (required for some composer actions)
 && apt-get install -y git
-COPY php.ini-development /etc/php/8.0/fpm/php.ini
+COPY php.ini /etc/php/8.0/fpm/php.ini
 COPY startup_script.sh ./
 RUN chmod a+x startup_script.sh
 
