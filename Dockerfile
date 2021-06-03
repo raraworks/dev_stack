@@ -19,7 +19,7 @@ php8.0-gd \
 #add www-data group to nginx user so that nginx has access to php-fpm pool
 && usermod -aG www-data nginx \
 # Installing composer and its prerequisites globally
-&& php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php &&  php -r "unlink('composer-setup.php');" && mv composer.phar /usr/local/bin/composer \
+&& php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php --2 &&  php -r "unlink('composer-setup.php');" && mv composer.phar /usr/local/bin/composer \
 # Installing node and npm and its prerequisites
 && apt-get install -y build-essential \
 && curl -sL https://deb.nodesource.com/setup_lts.x | bash - \
