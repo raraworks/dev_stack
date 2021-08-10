@@ -22,8 +22,8 @@ php8.0-gd \
 && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php --2 &&  php -r "unlink('composer-setup.php');" && mv composer.phar /usr/local/bin/composer \
 # Installing node and npm and its prerequisites
 && apt-get install -y build-essential \
-&& curl -sL https://deb.nodesource.com/setup_lts.x | bash - \
-    && apt-get install -y nodejs \
+&& curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+    && apt-get install -y nodejs && npm i -g npm@latest \
 # Installing git (required for some composer actions)
 && apt-get install -y git
 COPY php.ini /etc/php/8.0/fpm/php.ini
