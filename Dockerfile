@@ -9,16 +9,16 @@ RUN apt-get update \
   && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list \
   && apt-get update \
   && apt-get install -y \
-    php8.0-fpm \
-    php8.0-mbstring \
-    php8.0-imagick \
-    php8.0-zip \
-    php8.0-xml \
-    php8.0-curl \
-    php8.0-intl \
-    php8.0-pgsql \
-    php8.0-mysql \
-    php8.0-xdebug \
+    php8.1-fpm \
+    php8.1-mbstring \
+    php8.1-imagick \
+    php8.1-zip \
+    php8.1-xml \
+    php8.1-curl \
+    php8.1-intl \
+    php8.1-pgsql \
+    php8.1-mysql \
+    php8.1-xdebug \
 #add www-data group to nginx user so that nginx has access to php-fpm pool
   && usermod -aG www-data nginx \
 # Installing composer and its prerequisites globally
