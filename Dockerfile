@@ -12,6 +12,7 @@ RUN apt-get update \
     php8.1-fpm \
     php8.1-mbstring \
     php8.1-imagick \
+    php8.1-gd \
     php8.1-zip \
     php8.1-xml \
     php8.1-curl \
