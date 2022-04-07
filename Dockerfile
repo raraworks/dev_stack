@@ -20,6 +20,7 @@ RUN apt-get update \
     php8.1-pgsql \
     php8.1-mysql \
     php8.1-xdebug \
+    php8.1-redis \
 #add www-data group to nginx user so that nginx has access to php-fpm pool
   && usermod -aG www-data nginx \
 # Installing composer and its prerequisites globally
