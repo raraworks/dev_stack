@@ -9,18 +9,18 @@ RUN apt-get update \
   && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list \
   && apt-get update \
   && apt-get install -y \
-    php8.0-fpm \
-    php8.0-mbstring \
-    php8.0-imagick \
-    php8.0-gd \
-    php8.0-zip \
-    php8.0-xml \
-    php8.0-curl \
-    php8.0-intl \
-    php8.0-pgsql \
-    php8.0-mysql \
-    php8.0-xdebug \
-    php8.0-redis \
+    php7.4-fpm \
+    php7.4-mbstring \
+    php7.4-imagick \
+    php7.4-gd \
+    php7.4-zip \
+    php7.4-xml \
+    php7.4-curl \
+    php7.4-intl \
+    php7.4-pgsql \
+    php7.4-mysql \
+    php7.4-xdebug \
+    php7.4-redis \
 #add www-data group to nginx user so that nginx has access to php-fpm pool
   && usermod -aG www-data nginx \
 # Installing composer and its prerequisites globally
@@ -37,7 +37,7 @@ RUN apt-get update \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
   && apt-get update \
   && apt-get install yarn
-COPY php.ini /etc/php/8.0/fpm/php.ini
+COPY php.ini /etc/php/7.4/fpm/php.ini
 COPY startup_script.sh ./
 RUN chmod a+x startup_script.sh
 CMD ./startup_script.sh
