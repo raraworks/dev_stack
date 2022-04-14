@@ -4,5 +4,5 @@
 - Includes:
     - latest stable nginx (duh)
     - latest stable php 7.4 (using deb.sury.org PPA) w/ composer v2
-    - Latest stable LTS release of nodejs and latest npm (deb.nodesource.com)
+    - Latest stable LTS release of nodejs and latest npm + yarn 1 (deb.nodesource.com)
     
