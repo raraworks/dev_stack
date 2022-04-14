@@ -1,5 +1,5 @@
 #!/bin/bash
 #Startup multiple processes
 service cron start
-service php8.1-fpm start
+service php7.4-fpm start
 nginx -g "daemon off;"
