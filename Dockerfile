@@ -37,7 +37,8 @@ RUN apt-get update \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
   && apt-get update \
   && apt-get install yarn
-COPY php.ini /etc/php/8.1/fpm/php.ini
+COPY php-fpm.ini /etc/php/8.1/fpm/php.ini
+COPY php-cli.ini /etc/php/8.1/cli/php.ini
 COPY startup_script.sh ./
 RUN chmod a+x startup_script.sh
 CMD ./startup_script.sh
